@@ -1,21 +1,51 @@
+"use client";
+
+import { useState } from "react";
+
 import Header from "@/components/layout/Header";
 import Sidebar from "@/components/layout/Sidebar";
 
-export default function ProtectedLayout({ children }) {
+export default function ProtectedLayout({
+  children,
+}) {
+  const [collapsed, setCollapsed] =
+    useState(false);
+
   return (
     <div className="bg-gray-50">
-      {/* Fixed Sidebar */}
-      <div className="fixed left-0 top-0 h-screen w-[280px] z-40 overflow-hidden">
-        <Sidebar />
+      {/* Sidebar */}
+      <div
+        className={`fixed left-0 top-0 h-screen z-40 transition-all duration-300 ${
+          collapsed
+            ? "w-[80px]"
+            : "w-[250px]"
+        }`}
+      >
+        <Sidebar
+          collapsed={collapsed}
+          setCollapsed={setCollapsed}
+        />
       </div>
 
-      {/* Fixed Header */}
-      <div className="fixed top-0 left-[280px] right-0 z-30">
+      {/* Header */}
+      <div
+        className={`fixed top-0 right-0 z-30 transition-all duration-300 ${
+          collapsed
+            ? "left-[80px]"
+            : "left-[250px]"
+        }`}
+      >
         <Header />
       </div>
 
-      {/* Page Content */}
-      <main className="ml-[280px] pt-[69px] min-h-screen">
+      {/* Content */}
+      <main
+        className={`pt-[69px] min-h-screen transition-all duration-300 ${
+          collapsed
+            ? "ml-[80px]"
+            : "ml-[250px]"
+        }`}
+      >
         {children}
       </main>
     </div>
