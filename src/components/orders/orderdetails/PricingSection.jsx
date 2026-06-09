@@ -8,7 +8,7 @@ export default function PricingSection({
         <>
             <SectionTitle title="Pricing" />
 
-            <div className="bg-white rounded-3xl border border-slate-200 p-5 mb-10 space-y-3 text-sm">
+            <div className="bg-white rounded-3xl border border-slate-200 p-5 mb-5 space-y-2 text-[12px]">
                 <div className="flex justify-between">
                     <span>
                         Subtotal

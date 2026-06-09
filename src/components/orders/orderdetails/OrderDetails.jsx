@@ -94,17 +94,17 @@ export default function OrderDetailsDrawer({
                     </button>
 
                     {/* Header */}
-                    <div className="bg-[#eef4ff] px-8 py-8 border-b border-slate-200">
+                    <div className="bg-[#eef4ff] px-4 py-4 border-b border-slate-200">
                         <div className="flex items-start justify-between pr-10">
                             <div>
-                                <h2 className="text-[12px] leading-none font-semibold text-[#020617]">
+                                <h2 className="text-[15px] leading-none font-semibold text-[#020617]">
                                     Order{" "}
                                     {
                                         order.order_number
                                     }
                                 </h2>
 
-                                <p className="text-slate-500 mt-5 text-[12px]">
+                                <p className="text-slate-500 mt-2 text-[12px]">
                                     {order.order_date
                                         ? new Date(
                                             order.order_date
@@ -116,7 +116,7 @@ export default function OrderDetailsDrawer({
                             </div>
 
                             <span
-                                className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-[14px] font-medium ${orderStatus ===
+                                className={`inline-flex items-center gap-2 px-3 py-2 rounded-full text-[12px] font-medium ${orderStatus ===
                                     "cancelled"
                                     ? "bg-red-100 text-red-500"
                                     : orderStatus ===
@@ -142,7 +142,7 @@ export default function OrderDetailsDrawer({
                     </div>
 
                     {/* Content */}
-                    <div className="px-8 py-8">
+                    <div className="px-4 py-4">
                         <CustomerSection
                             customer={order?.customer}
                         />

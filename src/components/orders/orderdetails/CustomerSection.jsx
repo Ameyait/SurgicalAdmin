@@ -4,10 +4,10 @@ export default function CustomerSection({
     customer,
 }) {
     return (
-        <div className="mb-10">
+        <div className="mb-4">
             <SectionTitle title="Customer" />
 
-            <div className="space-y-2 text-[13px] text-slate-700">
+            <div className="space-y-1 text-[13px] text-slate-700">
                 <p>
                     <span className="font-semibold">
                         Name:

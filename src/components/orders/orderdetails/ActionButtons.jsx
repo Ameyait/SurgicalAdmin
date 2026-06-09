@@ -114,10 +114,10 @@ export default function ActionButtons({
                 Invoice
             </button>
 
-            <button className="h-9 bg-white border border-slate-200 rounded-xl shadow-sm flex items-center justify-center gap-3 text-[10px] font-semibold">
+            {/* <button className="h-9 bg-white border border-slate-200 rounded-xl shadow-sm flex items-center justify-center gap-3 text-[10px] font-semibold">
                 <MessageCircle size={19} />
                 WhatsApp
-            </button>
+            </button> */}
         </div>
     );
 }

@@ -8,8 +8,11 @@ import {
   updateProduct,
 } from "@/services/product.service";
 
+import { getCategories } from "@/services/category.service";
+
 export default function useProducts() {
   const [products, setProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const fetchProducts = async () => {
@@ -19,8 +22,6 @@ export default function useProducts() {
       const response = await getProducts({
         page: 1,
         page_size: 20,
-        category_id:
-          "9ec521df-04ee-4cdc-b474-557a6afbad72",
       });
 
       setProducts(response?.data || []);
@@ -31,6 +32,24 @@ export default function useProducts() {
       );
     } finally {
       setLoading(false);
+    }
+  };
+
+  const fetchCategories = async () => {
+    try {
+      const response =
+        await getCategories();
+
+      if (response?.success) {
+        setCategories(
+          response?.data || []
+        );
+      }
+    } catch (error) {
+      console.error(
+        "Fetch Categories Error:",
+        error
+      );
     }
   };
 
@@ -88,10 +107,12 @@ export default function useProducts() {
 
   useEffect(() => {
     fetchProducts();
+    fetchCategories();
   }, []);
 
   return {
     products,
+    categories,
     loading,
     fetchProducts,
     handleDeleteProduct,

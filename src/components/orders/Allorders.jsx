@@ -14,7 +14,7 @@ export default function AllOrders({
     setPaymentFilter,
     onOrderClick,
 }) {
-    
+
     const [showDeliveryDropdown, setShowDeliveryDropdown] =
         useState(false);
 
@@ -69,80 +69,124 @@ export default function AllOrders({
     }, []);
 
     return (
-        <div className="min-h-screen bg-slate-50 p-6">
+        <div className="min-h-screen bg-slate-50 p-4">
             {/* Header */}
             <div className="flex items-start justify-between mb-6">
                 <div>
-                    <h1 className="text-3xl font-bold text-slate-900">
+                    <h1 className="text-2xl font-bold text-slate-900">
                         Orders
                     </h1>
 
-                    <p className="text-base text-slate-500 mt-2">
+                    <p className="text-sm text-slate-500 mt-2">
                         28 total orders · 5 showing
                     </p>
                 </div>
 
-                <div className="flex gap-3">
+                {/* <div className="flex gap-3">
                     <button className="h-10 px-4 bg-white border border-slate-200 rounded-xl shadow-sm flex items-center gap-2 text-sm font-medium hover:bg-slate-50">
                         <Download size={16} />
                         Export CSV
-                    </button>
+                    </button> */}
 
-                    <button className="h-10 px-4 bg-emerald-500 text-white rounded-xl shadow-md flex items-center gap-2 text-sm font-medium hover:bg-emerald-600">
+                    {/* <button className="h-10 px-4 bg-emerald-500 text-white rounded-xl shadow-md flex items-center gap-2 text-sm font-medium hover:bg-emerald-600">
                         <Plus size={16} />
                         New Order
-                    </button>
-                </div>
+                    </button> */}
+                {/* </div> */}
             </div>
 
             {/* Stats Cards */}
             <div className="grid grid-cols-4 gap-5 mb-6">
-                <div className="h-[140px] bg-white border border-slate-200 rounded-2xl p-5">
-                    <p className="text-sm uppercase font-semibold text-slate-500">
-                        Revenue
-                    </p>
-                    <h2 className="text-3xl font-bold text-slate-900 mt-3">
-                        ₹55.4k
-                    </h2>
-                    <p className="mt-4 text-sm text-slate-500">
-                        <span className="text-emerald-500 font-semibold">
-                            ↑ +12%
-                        </span>{" "}
-                        vs yesterday
-                    </p>
+                <div className="h-[110px] bg-white border border-slate-200 rounded-2xl p-5 flex justify-between">
+                    <div>
+                        <p className="text-[11px] uppercase font-semibold text-slate-500">
+                            Revenue
+                        </p>
+
+                        <h2 className="text-[20px] font-bold text-slate-900 mt-1">
+                            ₹55.4k
+                        </h2>
+
+                        <p className="mt-3 text-xs text-slate-500">
+                            <span className="text-emerald-500 font-semibold">
+                                ↑ +12%
+                            </span>{" "}
+                            vs yesterday
+                        </p>
+                    </div>
+
+                    <div className="w-9 h-9 rounded-2xl bg-blue-100 flex items-center justify-center">
+                        <IndianRupee
+                            className="text-blue-600"
+                            size={18}
+                        />
+                    </div>
                 </div>
 
-                <div className="h-[140px] bg-white border border-slate-200 rounded-2xl p-5">
-                    <Package className="text-orange-500 mb-3" size={22} />
-                    <p className="text-sm uppercase font-semibold text-slate-500">
-                        Pending
-                    </p>
-                    <h2 className="text-3xl font-bold mt-3">3</h2>
+                <div className="h-[110px] bg-white border border-slate-200 rounded-2xl p-5 flex justify-between">
+                    <div>
+                        <p className="text-[11px] uppercase font-semibold text-slate-500">
+                            Pending
+                        </p>
+
+                        <h2 className="text-[20px] font-bold mt-1">
+                            3
+                        </h2>
+                    </div>
+
+                    <div className="w-9 h-9 rounded-2xl bg-orange-100 flex items-center justify-center">
+                        <Package
+                            className="text-orange-500"
+                            size={18}
+                        />
+                    </div>
                 </div>
 
-                <div className="h-[140px] bg-white border border-slate-200 rounded-2xl p-5">
-                    <Truck className="text-blue-500 mb-3" size={22} />
-                    <p className="text-sm uppercase font-semibold text-slate-500">
-                        In Transit
-                    </p>
-                    <h2 className="text-3xl font-bold mt-3">8</h2>
+                <div className="h-[110px] bg-white border border-slate-200 rounded-2xl p-5 flex justify-between">
+                    <div>
+                        <p className="text-[11px] uppercase font-semibold text-slate-500">
+                            In Transit
+                        </p>
+
+                        <h2 className="text-[20px] font-bold mt-1">
+                            8
+                        </h2>
+                    </div>
+
+                    <div className="w-9 h-9 rounded-2xl bg-blue-100 flex items-center justify-center">
+                        <Truck
+                            className="text-blue-500"
+                            size={18}
+                        />
+                    </div>
                 </div>
 
-                <div className="h-[140px] bg-white border border-slate-200 rounded-2xl p-5">
-                    <CheckCircle className="text-green-500 mb-3" size={22} />
-                    <p className="text-sm uppercase font-semibold text-slate-500">
-                        Delivered
-                    </p>
-                    <h2 className="text-3xl font-bold mt-3">8</h2>
+                <div className="h-[110px] bg-white border border-slate-200 rounded-2xl p-5 flex justify-between">
+                    <div>
+                        <p className="text-[11px] uppercase font-semibold text-slate-500">
+                            Delivered
+                        </p>
+
+                        <h2 className="text-[20px] font-bold mt-1">
+                            8
+                        </h2>
+                    </div>
+
+                    <div className="w-9 h-9 rounded-2xl bg-green-100 flex items-center justify-center">
+                        <CheckCircle
+                            className="text-green-500"
+                            size={18}
+                        />
+                    </div>
                 </div>
             </div>
 
             <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden">
-                <div className="p-4 flex items-center gap-3 border-b border-slate-200">
+                <div className="p-2.5 flex items-center gap-3 border-b border-slate-200">
                     <div className="relative flex-1">
                         <Search
                             className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"
-                            size={18}
+                            size={16}
                         />
 
                         <input
@@ -150,7 +194,7 @@ export default function AllOrders({
                             value={search}
                             onChange={(e) => setSearch(e.target.value)}
                             placeholder="Search order, customer, phone..."
-                            className="w-full h-11 pl-11 pr-4 border border-slate-200 rounded-xl text-sm outline-none"
+                            className="w-full h-9 pl-9 pr-4 border border-slate-200 rounded-xl text-sm outline-none"
                         />
                     </div>
 
@@ -160,14 +204,14 @@ export default function AllOrders({
                                 setShowDeliveryDropdown(!showDeliveryDropdown);
                                 setShowPaymentDropdown(false);
                             }}
-                            className="h-11 min-w-[180px] px-4 border border-slate-200 rounded-xl flex items-center justify-between text-sm bg-white"
+                            className="h-9 min-w-[180px] px-4 border border-slate-200 rounded-xl flex items-center justify-between text-sm bg-white"
                         >
                             {deliveryFilter}
                             <ChevronDown size={16} />
                         </button>
 
                         {showDeliveryDropdown && (
-                            <div className="absolute top-14 left-0 w-[260px] bg-white border border-slate-200 rounded-2xl shadow-xl z-50 p-2">
+                            <div className="absolute top-14 left-0 w-full bg-white border border-slate-200 rounded-2xl shadow-xl z-50 p-2">
                                 {deliveryOptions.map((option) => (
                                     <button
                                         key={option}
@@ -175,7 +219,7 @@ export default function AllOrders({
                                             setDeliveryFilter(option);
                                             setShowDeliveryDropdown(false);
                                         }}
-                                        className={`w-full px-4 py-3 rounded-xl text-left flex items-center justify-between ${deliveryFilter === option
+                                        className={`w-full px-2 py-1 rounded-xl text-sm text-left flex items-center justify-between ${deliveryFilter === option
                                             ? "bg-green-500 text-white"
                                             : "hover:bg-slate-50"
                                             }`}
@@ -194,14 +238,14 @@ export default function AllOrders({
                                 setShowPaymentDropdown(!showPaymentDropdown);
                                 setShowDeliveryDropdown(false);
                             }}
-                            className="h-11 min-w-[180px] px-4 border border-slate-200 rounded-xl flex items-center justify-between text-sm bg-white"
+                            className="h-9 min-w-[180px] px-4 border border-slate-200 rounded-xl flex items-center justify-between text-sm bg-white"
                         >
                             {paymentFilter}
                             <ChevronDown size={16} />
                         </button>
 
                         {showPaymentDropdown && (
-                            <div className="absolute top-14 left-0 w-[240px] bg-white border border-slate-200 rounded-2xl shadow-xl z-50 p-2">
+                            <div className="absolute top-14 left-0 w-full bg-white border border-slate-200 rounded-2xl shadow-xl z-50 p-2">
                                 {paymentOptions.map((option) => (
                                     <button
                                         key={option}
@@ -210,7 +254,7 @@ export default function AllOrders({
 
                                             setShowPaymentDropdown(false);
                                         }}
-                                        className={`w-full px-4 py-3 rounded-xl text-left flex items-center justify-between ${paymentFilter === option
+                                        className={`w-full px-2 py-1 rounded-xl text-sm text-left flex items-center justify-between ${paymentFilter === option
                                             ? "bg-green-500 text-white"
                                             : "hover:bg-slate-50"
                                             }`}
@@ -223,15 +267,15 @@ export default function AllOrders({
                         )}
                     </div>
 
-                    <button className="h-11 px-4 border border-slate-200 rounded-xl flex items-center gap-2 text-sm font-medium">
+                    {/* <button className="h-11 px-4 border border-slate-200 rounded-xl flex items-center gap-2 text-sm font-medium">
                         <Filter size={16} />
                         More filters
-                    </button>
+                    </button> */}
                 </div>
 
                 <table className="w-full">
                     <thead>
-                        <tr className="h-12 bg-slate-50 border-b border-slate-200 text-xs uppercase text-slate-500">
+                        <tr className="h-9 bg-slate-100 border-b border-slate-200 text-xs uppercase text-slate-500">
                             <th className="px-6 text-left">Order ID</th>
                             <th className="text-left">Customer</th>
                             <th className="text-left">Items</th>
@@ -258,28 +302,28 @@ export default function AllOrders({
                                 <tr
                                     key={order.id}
                                     onClick={() => onOrderClick(order)}
-                                    className="h-[72px] border-b border-slate-200 hover:bg-slate-50 cursor-pointer"
+                                    className="h-[55px] border-b border-slate-200 hover:bg-slate-50 cursor-pointer"
                                 >
                                     <td className="px-6">
-                                        <span className="text-blue-600 text-sm font-semibold">
+                                        <span className="text-blue-600 text-xs font-semibold">
                                             {order.order_number}
                                         </span>
                                     </td>
 
                                     <td>
-                                        <h4 className="text-base font-semibold">
+                                        <h4 className="text-sm font-semibold">
                                             {order.customer_name}
                                         </h4>
-                                        <p className="text-sm text-slate-500">
+                                        {/* <p className="text-sm text-slate-500">
                                             {order.customer_phone}
-                                        </p>
+                                        </p> */}
                                     </td>
 
-                                    <td className="text-sm text-slate-500">
+                                    <td className="text-xs text-slate-500">
                                         {order.items_count} items
                                     </td>
 
-                                    <td className="text-base font-semibold">
+                                    <td className="text-sm font-semibold">
                                         ₹{Number(order.amount).toLocaleString()}
                                     </td>
 
@@ -304,20 +348,20 @@ export default function AllOrders({
                                         <span
                                             className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium ${order.status === "delivered"
                                                 ? "bg-green-100 text-green-600"
-                                                : "bg-blue-100 text-blue-600"
+                                                : "bg-red-100 text-red-600"
                                                 }`}
                                         >
                                             <span
                                                 className={`h-2 w-2 rounded-full ${order.status === "delivered"
                                                     ? "bg-green-500"
-                                                    : "bg-blue-500"
+                                                    : "bg-red-500"
                                                     }`}
                                             />
                                             {order.status}
                                         </span>
                                     </td>
 
-                                    <td className="text-sm text-slate-500">
+                                    <td className="text-xs text-slate-500">
                                         {new Date(order.order_date).toLocaleDateString(
                                             "en-IN",
                                             {
@@ -329,7 +373,7 @@ export default function AllOrders({
 
                                     <td className="text-center">
                                         <button onClick={(e) => e.stopPropagation()}>
-                                            <MoreVertical size={18} />
+                                            <MoreVertical size={15} />
                                         </button>
                                     </td>
                                 </tr>
@@ -347,10 +391,6 @@ export default function AllOrders({
                     </tbody>
                 </table>
             </div>
-
-            <button className="fixed bottom-6 right-6 h-14 w-14 rounded-full bg-emerald-500 text-white flex items-center justify-center shadow-xl hover:bg-emerald-600">
-                <Plus size={24} />
-            </button>
         </div>
     );
 }

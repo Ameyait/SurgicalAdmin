@@ -18,6 +18,7 @@ import DeleteProductModal from "./DeleteProducts";
 
 export default function ProductsPage({
     products = [],
+    categories = [],
     loading = false,
     fetchProducts,
     handleDeleteProduct,
@@ -356,12 +357,14 @@ export default function ProductsPage({
             )}
 
             <AddProductModal
+                categories={categories}
                 openModal={openModal}
                 setOpenModal={setOpenModal}
                 fetchProducts={fetchProducts}
             />
 
             <EditProductModal
+                categories={categories}
                 openEditModal={openEditModal}
                 setOpenEditModal={setOpenEditModal}
                 selectedProduct={selectedProduct}

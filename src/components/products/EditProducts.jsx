@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { X } from "lucide-react";
 
 export default function EditProductModal({
+    categories = [],
     openEditModal,
     setOpenEditModal,
     selectedProduct,
@@ -14,7 +15,7 @@ export default function EditProductModal({
     const [formData, setFormData] = useState({
         name: "",
         description: "",
-        category: "",
+        category_id: "",
         brand: "",
         mrp: "",
         salePrice: "",
@@ -39,8 +40,8 @@ export default function EditProductModal({
             description:
                 selectedProduct.description ?? "",
 
-            category:
-                selectedProduct.category_name ?? "",
+            category_id:
+                selectedProduct.category_id ?? "",
 
             brand:
                 selectedProduct.brand ?? "",
@@ -128,7 +129,7 @@ export default function EditProductModal({
                     selectedProduct.id,
                     {
                         category_id:
-                            selectedProduct.category_id,
+                            formData.category_id,
 
                         name: formData.name,
 
@@ -237,14 +238,25 @@ export default function EditProductModal({
                         </label>
 
                         <select
-                            name="category"
-                            value={formData.category || ""}
+                            name="category_id"
+                            value={formData.category_id || ""}
                             onChange={handleChange}
                             className="w-full mt-2 h-9 border border-gray-300 rounded-xl px-4 text-sm outline-none"
                         >
-                            <option>Respiratory</option>
-                            <option>Diagnostics</option>
-                            <option>Healthcare</option>
+                            <option value="">
+                                Select Category
+                            </option>
+
+                            {categories.map((category) => (
+                                <option
+                                    key={category.id}
+                                    value={category.id}
+                                >
+                                    {category.icon
+                                        ? `${category.icon} ${category.name}`
+                                        : category.name}
+                                </option>
+                            ))}
                         </select>
                     </div>
 

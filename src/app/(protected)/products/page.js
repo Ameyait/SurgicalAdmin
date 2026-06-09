@@ -1,8 +1,11 @@
 "use client";
 
 import { useState } from "react";
+
 import Products from "@/components/products/AllProducts";
+
 import useProducts from "@/hooks/products/useProducts";
+import useCategories from "@/hooks/categories/useCategories";
 
 export default function ProductsPage() {
     const {
@@ -12,7 +15,10 @@ export default function ProductsPage() {
         handleDeleteProduct,
         handleUpdateProduct,
     } = useProducts();
-    const [view, setView] = useState("grid");
+
+    const { categoriesData } =
+        useCategories();
+
     const [openModal, setOpenModal] =
         useState(false);
 
@@ -28,6 +34,7 @@ export default function ProductsPage() {
     return (
         <Products
             products={products}
+            categories={categoriesData}
             loading={loading}
             fetchProducts={fetchProducts}
             handleDeleteProduct={handleDeleteProduct}

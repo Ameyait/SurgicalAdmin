@@ -9,7 +9,7 @@ export default function TimelineSection({
         <>
             <SectionTitle title="Timeline" />
 
-            <div className="relative ml-3 mb-9">
+            <div className="relative ml-3 mb-5">
                 <div className="absolute left-[7px] top-3 bottom-3 w-0.5 bg-slate-200"></div>
 
                 {timelineSteps.map((step, index) => {

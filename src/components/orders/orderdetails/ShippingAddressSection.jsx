@@ -4,7 +4,7 @@ export default function ShippingAddressSection({
     address,
 }) {
     return (
-        <div className="mb-10">
+        <div className="mb-5">
             <SectionTitle title="Shipping Address" />
 
             <div className="space-y-2 text-[13px] text-slate-700">

@@ -5,8 +5,8 @@ export default function DeliverySection() {
         <>
             <SectionTitle title="Delivery" />
 
-            <div className="bg-slate-50 rounded-[22px] px-5 py-4 mb-8">
-                <div className="flex justify-between text-[10px]">
+            <div className="bg-slate-50 rounded-[22px] px-3 mb-4">
+                <div className="flex justify-between text-[12px]">
                     <span className="text-slate-500">
                         Courier
                     </span>
@@ -16,7 +16,7 @@ export default function DeliverySection() {
                     </span>
                 </div>
 
-                <div className="flex justify-between text-[10px] mt-3">
+                <div className="flex justify-between text-[12px] mt-2">
                     <span className="text-slate-500">
                         Tracking ID
                     </span>
